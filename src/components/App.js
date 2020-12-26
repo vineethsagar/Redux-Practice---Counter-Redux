@@ -7,9 +7,9 @@ function App(props) {
 // console.log();
   return (
     <div id='main'>
-      <button onClick={increment}>+</button>
+      <button onClick={props.increment}>+</button>
         <div data-testid='counter'>{props.counter}</div>
-      <button onClick={decrement}>-</button>
+      <button onClick={props.decrement}>-</button>
     </div>
   );
 }
@@ -19,5 +19,13 @@ const mapStateToProps = state=>{
     counter:state.counter
   }
 }
+// console.log(increment)
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch =>{
+  return{
+    increment:()=>dispatch(increment()),
+    decrement:()=>dispatch(decrement())
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

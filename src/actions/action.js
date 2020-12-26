@@ -6,13 +6,13 @@ export const store = createStore(reducer);
 const unsubscribe = store.subscribe(()=>{console.log("Store changed :",store.getState())});
 
 export function increment(){
-    store.dispatch({
+    return {
         type:'increment'
-    })
+    }
 }
 
 export function decrement(){
-    store.dispatch({
+    return {
         type:'decrement'
-    })
+    }
 }
