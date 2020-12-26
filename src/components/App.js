@@ -4,13 +4,13 @@ import {connect} from 'react-redux'
 
 
 function App(props) {
-// console.log();
+ console.log(props);
   return (
-    <div id='main'>
-      <button onClick={props.increment}>+</button>
+    <>
+      <button onClick={props.increment}>  + </button>
         <div data-testid='counter'>{props.counter}</div>
-      <button onClick={props.decrement}>-</button>
-    </div>
+      <button onClick={props.decrement}> - </button>
+    </>
   );
 }
 
